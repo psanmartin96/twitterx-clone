@@ -29,14 +29,8 @@ export default function PostCard ({
       </CardHeader>
       <CardBody className="px-3 py-0 text-xs text-white">
         <p>
-          Frontend developer and UI/UX enthusiast. Join me on this coding adventure!
+          {content}
         </p>
-        <span className="pt-2">
-          #FrontendWithZoey
-          <span className="py-2" aria-label="computer" role="img">
-            💻
-          </span>
-        </span>
       </CardBody>
       <CardFooter className="gap-3">
         <button>

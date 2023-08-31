@@ -1,30 +1,34 @@
-import PostCard from '@/app/components/post-card'
-import { type Post } from '../types/posts'
+import PostCard from './post-card'
+import { type Post } from '@/app/types/posts'
 
-export default function PostList ({ posts }: { posts: Post[] | null }) {
+export function PostLists ({ posts }: { posts: Post[] | null }) {
   return (
     <>
-      {posts?.map(post => {
-        const {
-          id,
-          user,
-          content
-        } = post
+    {
+        posts?.map(post => {
+          const {
+            id,
+            user,
+            content
+          } = post
 
-        const {
-          avatar_url: avatarUrl,
-          name: userFullName,
-          user_name: userName
-        } = user
+          const {
+            user_name: userName,
+            name: userFullName,
+            avatar_url: avatarUrl
+          } = user
 
-        return (<PostCard
-          avatarUrl={avatarUrl}
-          content={content}
-          key={id}
-          userFullName={userFullName}
-          userName={userName}
-        />)
-      })}
+          return (
+            <PostCard
+              avatarUrl={avatarUrl}
+              content={content}
+              key={id}
+              userFullName={userFullName}
+              userName={userName}
+            />
+          )
+        })
+      }
     </>
   )
 }
